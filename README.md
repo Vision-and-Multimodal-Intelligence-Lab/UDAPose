@@ -35,7 +35,7 @@ Official repo of CVPR'26 paper "UDAPose: Unsupervised Domain Adaptation for Low-
 
 ## Inference
 
-1. Download checkpoints.
+1. Download checkpoints from [🤗](https://huggingface.co/arsity/UDAPose-model-weights).
 
     ```bash
     hf download arsity/UDAPose-model-weights --local-dir ckpts
