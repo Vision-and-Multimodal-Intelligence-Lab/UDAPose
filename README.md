@@ -97,3 +97,19 @@ sh train.sh
 ```
 
 to start training (for low-light). If you want to start from scratch (well-lit), you can edit `train.sh`.
+
+## Bibtex
+
+If you find this work useful, please consider cite our paper
+
+```bibtex
+@misc{chen2026udapose,
+      title={UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation}, 
+      author={Haopeng Chen and Yihao Ai and Kabeen Kim and Robby T. Tan and Yixin Chen and Bo Wang},
+      year={2026},
+      eprint={2604.10485},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2604.10485}, 
+}
+```
