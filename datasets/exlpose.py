@@ -39,7 +39,7 @@ class CocoDetection(torch.utils.data.Dataset):
         self.prepare = ConvertCocoPolysToMask(return_masks)
         self.image_set = image_set
         if image_set == "train":
-            with open("PATH_TO_MAPPING_LIST", "r", encoding="utf-8") as f:
+            with open("data/mapping_list.json", "r", encoding="utf-8") as f:
                 self.style_mapping_list = json.load(f)
             self.img_folder = root_path
             self.coco = COCO(root_path / "Annotations" / "ExLPose_train_WL.json")
@@ -104,7 +104,7 @@ class CocoDetection(torch.utils.data.Dataset):
 
         target = {"image_id": image_id, "annotations": target, "img_light_level": img_light_level}
         if self.image_set == "train" and img_light_level == "LL" and not self.use_ella:
-            path = "PATH_TO_SYNTHETIC_DATA"
+            path = "data/synthetic"
             ver = random.choice(["normal", "hard", "extreme", "a7m3", "ricoh3"])
             # ver = random.choice(["normal", "hard", "extreme"])
             version_ids = self.style_mapping_list[f"{image_id}"][ver]

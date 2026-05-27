@@ -4,7 +4,7 @@ Official repo of CVPR'26 paper "UDAPose: Unsupervised Domain Adaptation for Low-
 ## Roadmap
 
 - [x] Inference code and model weights
-- [ ] Pose model training and synthetic data
+- [x] Pose model training and synthetic data
 - [ ] Data synthesis pipeline and training
 
 ## Environment
@@ -60,7 +60,7 @@ Official repo of CVPR'26 paper "UDAPose: Unsupervised Domain Adaptation for Low-
          |   |- A7M3
          |   |   |- (A7M3 images)...
          |   |- RICOH3
-         |   |   |- (A7M3 images)...
+         |   |   |- (RICOH3 images)...
     ```
 
 4. Run inference
@@ -68,3 +68,32 @@ Official repo of CVPR'26 paper "UDAPose: Unsupervised Domain Adaptation for Low-
     ```bash
     sh test.sh
     ```
+
+## Train
+
+### Train Pose Model
+
+Download synthetic data
+
+```bash
+hf download arsity/UDAPose-synthetic-data images.zip mapping_list.json --type dataset --local-dir data
+```
+
+Unzip and organize as following
+
+```
+data
+ |- mapping_list.json
+ |- synthetic
+     |- 0
+     |- 1
+     |- (image id directories)...
+```
+
+then
+
+```bash
+sh train.sh
+```
+
+to start training (for low-light). If you want to start from scratch (well-lit), you can edit `train.sh`.
