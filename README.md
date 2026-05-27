@@ -73,7 +73,7 @@ Official repo of CVPR'26 paper "UDAPose: Unsupervised Domain Adaptation for Low-
 
 ### Train Pose Model
 
-Download synthetic data
+Download synthetic data from [🤗](https://huggingface.co/datasets/arsity/UDAPose-synthetic-data).
 
 ```bash
 hf download arsity/UDAPose-synthetic-data images.zip mapping_list.json --type dataset --local-dir data
