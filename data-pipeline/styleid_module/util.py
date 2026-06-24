@@ -67,6 +67,7 @@ def load_vae(cfg, accelerator):
 
 
 def get_sd_hf_pretrained_model_name(sd_ver: str):
+    sd_ver = str(sd_ver).lower()
     if sd_ver == "2.1":
         hf_pretrained_model_name = "sd2-community/stable-diffusion-2-1"
     elif sd_ver == "2.1-base":
