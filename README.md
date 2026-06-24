@@ -3,7 +3,7 @@
 Official implementation of the paper
 
 > UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation, *CVPR 2026*  
-> [![arXiv](https://img.shields.io/badge/arXiv-2604.10485-b31b1b.svg?style=flat)](https://arxiv.org/abs/2604.10485)
+> [![CVF Open Access](https://img.shields.io/badge/CVF%20Open%20Access-CVPR%202026-7898CA.svg?style=flat)](https://openaccess.thecvf.com/content/CVPR2026/html/Chen_UDAPose_Unsupervised_Domain_Adaptation_for_Low-Light_Human_Pose_Estimation_CVPR_2026_paper.html) [![arXiv](https://img.shields.io/badge/arXiv-2604.10485-b31b1b.svg?style=flat)](https://arxiv.org/abs/2604.10485)
 
 ![teaser](./img/teaser.png)
 
