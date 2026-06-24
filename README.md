@@ -5,13 +5,6 @@ Official implementation of the paper
 > UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation, *CVPR 2026*  
 > [![arXiv](https://img.shields.io/badge/arXiv-2604.10485-b31b1b.svg?style=flat)](https://arxiv.org/abs/2604.10485)
 
-## 📍 Roadmap
-
-- [x] Inference code and model weights
-- [x] Pose model training and synthetic data
-- [x] Data synthesis pipeline
-- [x] LCIM training
-
 ## 🛠️ Setup
 
 ### Python environment
