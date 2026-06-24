@@ -1,0 +1,32 @@
+dataset:
+  image_resize: [408, 648]
+  style_brightness_adjust: "align_mean"
+  target_mean_factor: 0.3460
+  target_std_factor: [0.1477, 0.1482, 0.1483]
+  exlpose_root: "../data/ExLPose"
+  mapping_config: "config/style_mapping_list.json"
+  batch_size: 1
+  shuffle: false
+  num_workers: 2
+  pin_memory: true
+styleid_module:
+  content_encoder: skip_v6
+  style_encoder: skip_v6
+  generated_decoder: skip_v6
+  stable_diffusion_version: 2.1-base
+  ddim_steps: 50
+  reverse_diffusion_align_latent_stats: "init"
+  align_stats_threshold: 40
+  style_transfer_params:
+    gamma: 0.75
+    tau: 1.15
+    injection_layers: [7, 8, 9, 10, 11]
+vae:
+  skip_v6:
+    pretrained_config: "config/vae.json"
+    pretrained_model: "../ckpts/model_1.safetensors"
+
+seed: 42
+run_epochs: 2
+partitions: [normal, hard, extreme, a7m3, ricoh3]
+save_dir: "../data/synthetic"

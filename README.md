@@ -1,14 +1,20 @@
 # UDAPose
+
+Official implementation of the paper
+
 > UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation, *CVPR 2026*  
 > [![arXiv](https://img.shields.io/badge/arXiv-2604.10485-b31b1b.svg?style=flat)](https://arxiv.org/abs/2604.10485)
 
-## Roadmap
+## 📍 Roadmap
 
 - [x] Inference code and model weights
 - [x] Pose model training and synthetic data
-- [ ] Data synthesis pipeline and training
+- [x] Data synthesis pipeline
+- [] VAE training
 
-## Environment
+## 🛠️ Setup
+
+### Python environment
 
 1. If you use [uv](https://docs.astral.sh/uv/), you can directly
 
@@ -34,17 +40,11 @@
     python test.py
     ```
 
-## Inference
+### Prepare ExLPose dataset
 
-1. Download checkpoints from [🤗](https://huggingface.co/arsity/UDAPose-model-weights).
+1. Download [ExLPose](https://github.com/sohyun-l/ExLPose) dataset and put into `data`.
 
-    ```bash
-    hf download arsity/UDAPose-model-weights --local-dir ckpts
-    ```
-
-2. Download [ExLPose](https://github.com/sohyun-l/ExLPose) dataset and put into `data`.
-
-3. Organize the dataset as following:
+2. Organize the dataset as following:
 
     ```
     data
@@ -64,13 +64,40 @@
          |   |   |- (RICOH3 images)...
     ```
 
-4. Run inference
+## Inference
+
+1. Download checkpoints from [🤗](https://huggingface.co/arsity/UDAPose-model-weights).
+
+    ```bash
+    hf download arsity/UDAPose-model-weights --local-dir ckpts
+    ```
+
+2. Run inference
 
     ```bash
     sh test.sh
     ```
 
+You may also want to edit `test.sh` to evaluate on one subset.
+
 ## Train
+
+### Generate training data
+
+1. Download checkpoints from [🤗](https://huggingface.co/arsity/UDAPose-model-weights).
+
+    ```bash
+    hf download arsity/UDAPose-model-weights --local-dir ckpts
+    ```
+
+2. Start generating training data
+
+    ```bash
+    cd data-pipeline
+    python style_transfer.py
+    ```
+
+Synthetic training data would be under `data/synthetic`.
 
 ### Train Pose Model
 
