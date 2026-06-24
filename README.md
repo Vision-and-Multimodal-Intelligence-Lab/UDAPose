@@ -91,7 +91,7 @@ Our full framework involves 3 steps in total. You can start from any step with o
 
     ```bash
     cd data-pipeline
-    python train_vae.py
+    accelerate launch train_vae.py
     ```
 
 Results would be under `ckpts/vae_train_outputs`.
@@ -108,7 +108,7 @@ Results would be under `ckpts/vae_train_outputs`.
 
     ```bash
     cd data-pipeline
-    python style_transfer.py
+    accelerate launch style_transfer.py
     ```
 
 Synthetic training data would be under `data/synthetic`.
