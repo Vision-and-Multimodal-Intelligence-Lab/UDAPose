@@ -1,0 +1,46 @@
+name: skip_v6_square-filter
+output_dir: "../ckpts/vae_train_outputs/${name}/${now:%Y-%m-%d_%H-%M-%S}"
+train:
+  checkpoint: ""
+  resume: false
+  gradient_checkpointing: false
+  accumulate: 2
+  epochs: 400
+  save_interval: 100
+  optimizer:
+    name: AdamW
+    base_lr: 1.0e-7
+  scheduler:
+    name: MultiStepLR
+    milestones: [320, 380]
+    gamma: 0.25
+    # name: ReduceLROnPlateau
+    # factor: 0.25
+    # patience: 8
+    # threshold: 1.0e-4
+    # min_lr: 1.0e-10
+  loss:
+    mse_loss: true
+    mse_weight: 1.0
+    fft_loss: true
+    fft_weight: 1.0
+    perceptual_loss: false
+    perceptual_weight: 0.8
+data:
+  exlpose_root: "../data/ExLPose"
+  dataset: "exlpose+ocn"
+  batch_size: 2
+  shuffle: true
+  num_workers: 4
+  pin_memory: true
+  persistent_workers: true
+model:
+  arch: skip_v6
+pretrained_config_path: "config/vae.json"
+pretrained_model_path: "../ckpts/diffusion_pytorch_model.safetensors"
+seed: 42
+hydra:
+  job:
+    name: ${name}
+  run:
+    dir: ${output_dir}

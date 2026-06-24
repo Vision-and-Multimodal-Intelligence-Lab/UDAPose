@@ -10,7 +10,7 @@ Official implementation of the paper
 - [x] Inference code and model weights
 - [x] Pose model training and synthetic data
 - [x] Data synthesis pipeline
-- [ ] VAE training
+- [x] LCIM training
 
 ## 🛠️ Setup
 
@@ -82,6 +82,25 @@ You may also want to edit `test.sh` to evaluate on one subset.
 
 ## Train
 
+Our full framework involves 3 steps in total. You can jump into any step to start with our provided checkpoints or from the very beginning.
+
+### Train LCIM
+
+1. Download SD 2.1 checkpoints from [🤗](https://huggingface.co/arsity/UDAPose-model-weights).
+
+    ```bash
+    hf download arsity/UDAPose-model-weights --local-dir ckpts
+    ```
+
+2. Start training LCIM
+
+    ```bash
+    cd data-pipeline
+    python train_vae.py
+    ```
+
+Results would be under `ckpts/vae_train_outputs`.
+
 ### Generate training data
 
 1. Download checkpoints from [🤗](https://huggingface.co/arsity/UDAPose-model-weights).
@@ -101,30 +120,49 @@ Synthetic training data would be under `data/synthetic`.
 
 ### Train Pose Model
 
-Download synthetic data from [🤗](https://huggingface.co/datasets/arsity/UDAPose-synthetic-data).
+1. Download checkpoints from [🤗](https://huggingface.co/arsity/UDAPose-model-weights).
 
-```bash
-hf download arsity/UDAPose-synthetic-data images.zip mapping_list.json --type dataset --local-dir data
-```
+    ```bash
+    hf download arsity/UDAPose-model-weights --local-dir ckpts
+    ```
 
-Unzip and organize as following
+2. Download synthetic data from [🤗](https://huggingface.co/datasets/arsity/UDAPose-synthetic-data).
 
-```
-data
- |- mapping_list.json
- |- synthetic
-     |- 0
-     |- 1
-     |- (image id directories)...
-```
+    ```bash
+    hf download arsity/UDAPose-synthetic-data images.zip mapping_list.json --type dataset --local-dir data
+    ```
 
-then
+3. Unzip and organize as following
 
-```bash
-sh train.sh
-```
+    ```
+    data
+    |- mapping_list.json
+    |- synthetic
+        |- 0
+        |- 1
+        |- (image id directories)...
+    ```
 
-to start training (for low-light). If you want to start from scratch (well-lit), you can edit `train.sh`.
+4. then
+
+    ```bash
+    sh train.sh
+    ```
+
+    to start training (for low-light). If you want to start from scratch (well-lit), you can edit `train.sh`.
+
+## License
+
+UDAPose is released under the **Apache License 2.0** for our original contributions, unless otherwise noted.
+
+This project builds upon several open-source projects. We preserve their original license notices, including:
+
+- [ED-Pose](https://github.com/IDEA-Research/ED-Pose): Apache License 2.0, with the original ED-Pose license notices retained
+- [StyleID](https://github.com/jiwoogit/StyleID): MIT License
+
+Some optional components, pretrained models, or external checkpoints may be subject to their own licenses, such as [Stable Diffusion](https://huggingface.co/sd2-community/stable-diffusion-2-1) / [SwinTransformer](https://github.com/microsoft/Swin-Transformer). These are not covered by the Apache-2.0 license of our original code.
+
+Please see `LICENSES/` for details.
 
 ## Bibtex
 
