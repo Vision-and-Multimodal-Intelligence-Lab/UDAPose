@@ -82,7 +82,7 @@ You may also want to edit `test.sh` to evaluate on one subset.
 
 ## Train
 
-Our full framework involves 3 steps in total. You can jump into any step to start with our provided checkpoints or from the very beginning.
+Our full framework involves 3 steps in total. You can start from any step with our provided checkpoints or from the very beginning.
 
 ### Train LCIM
 
