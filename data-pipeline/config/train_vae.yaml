@@ -29,7 +29,7 @@ train:
 data:
   exlpose_root: "../data/ExLPose"
   dataset: "exlpose+ocn"
-  batch_size: 2
+  batch_size: 2  # 4x RTX4090
   shuffle: true
   num_workers: 4
   pin_memory: true

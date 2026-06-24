@@ -5,7 +5,7 @@ dataset:
   target_std_factor: [0.1477, 0.1482, 0.1483]
   exlpose_root: "../data/ExLPose"
   mapping_config: "config/style_mapping_list.json"
-  batch_size: 1
+  batch_size: 1  # 4x RTX4090
   shuffle: false
   num_workers: 2
   pin_memory: true
