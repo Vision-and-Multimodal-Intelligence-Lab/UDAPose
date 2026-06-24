@@ -15,6 +15,5 @@ logs
 results
 debug
 data
-*.png
-*.jpg
+
 *.zip
