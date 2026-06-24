@@ -42,7 +42,7 @@ Official implementation of the paper
 
 ### Prepare ExLPose dataset
 
-1. Download [ExLPose](https://github.com/sohyun-l/ExLPose) dataset and put into `data`.
+1. Download [ExLPose](https://github.com/sohyun-l/ExLPose) dataset and put it under `data`.
 
 2. Organize the dataset as following:
 
