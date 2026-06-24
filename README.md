@@ -10,7 +10,7 @@ Official implementation of the paper
 - [x] Inference code and model weights
 - [x] Pose model training and synthetic data
 - [x] Data synthesis pipeline
-- [] VAE training
+- [ ] VAE training
 
 ## 🛠️ Setup
 
