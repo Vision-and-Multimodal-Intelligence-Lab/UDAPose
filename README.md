@@ -57,7 +57,7 @@ Official implementation of the paper
          |   |   |- (RICOH3 images)...
     ```
 
-## Inference
+## 🕵🏼 Inference
 
 1. Download checkpoints from [🤗](https://huggingface.co/arsity/UDAPose-model-weights).
 
@@ -73,7 +73,7 @@ Official implementation of the paper
 
 You may also want to edit `test.sh` to evaluate on one subset.
 
-## Train
+## 🏋🏼 Train
 
 Our full framework involves 3 steps in total. You can start from any step with our provided checkpoints or from the very beginning.
 
@@ -144,7 +144,7 @@ Synthetic training data would be under `data/synthetic`.
 
     to start training (for low-light). If you want to start from scratch (well-lit), you can edit `train.sh`.
 
-## License
+## ©️ License
 
 UDAPose is released under the **Apache License 2.0** for our original contributions, unless otherwise noted.
 
@@ -157,7 +157,7 @@ Some optional components, pretrained models, or external checkpoints may be subj
 
 Please see `LICENSES/` for details.
 
-## Bibtex
+## 📝 Bibtex
 
 If you find this work useful, please consider cite our paper
 
