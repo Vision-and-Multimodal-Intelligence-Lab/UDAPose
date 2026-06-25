@@ -155,9 +155,9 @@ This project builds upon several open-source projects. We preserve their origina
 - [ED-Pose](https://github.com/IDEA-Research/ED-Pose): Apache License 2.0, with the original ED-Pose license notices retained
 - [StyleID](https://github.com/jiwoogit/StyleID): MIT License
 
-Some optional components, pretrained models, or external checkpoints may be subject to their own licenses, such as [Stable Diffusion](https://huggingface.co/sd2-community/stable-diffusion-2-1) / [SwinTransformer](https://github.com/microsoft/Swin-Transformer). These are not covered by the Apache-2.0 license of our original code.
+Some optional components, pretrained models, or external checkpoints may be subject to their own licenses, such as [Stable Diffusion](https://huggingface.co/sd2-community/stable-diffusion-2-1) / [Swin-Transformer](https://github.com/microsoft/Swin-Transformer). These are not covered by the Apache-2.0 license of our original code.
 
-Please see `LICENSES/` for details.
+Please see [`LICENSES/`](./LICENSES) for details.
 
 ## 📝 Bibtex
 
