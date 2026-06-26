@@ -148,7 +148,7 @@ Synthetic training data would be under `data/synthetic`.
 
 ## ©️ License
 
-UDAPose is released under the **Apache License 2.0** for our original contributions, unless otherwise noted.
+UDAPose is released under the [**Apache License 2.0**](./LICENSE) for our original contributions, unless otherwise noted.
 
 This project builds upon several open-source projects. We preserve their original license notices, including:
 
