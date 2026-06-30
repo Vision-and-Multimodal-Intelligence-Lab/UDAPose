@@ -131,11 +131,11 @@ Synthetic training data would be under `data/synthetic`.
 
     ```
     data
-    |- mapping_list.json
-    |- synthetic
-        |- 0
-        |- 1
-        |- (image id directories)...
+     |- mapping_list.json
+     |- synthetic
+         |- 0
+         |- 1
+         |- (image id directories)...
     ```
 
 4. then
